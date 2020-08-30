@@ -158,6 +158,7 @@ class User extends Authenticatable
         }
     }
    
+   
     public function unfavorite($micropostId)
     {
         $exist = $this->is_favorite($micropostId);
