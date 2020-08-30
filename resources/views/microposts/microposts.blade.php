@@ -21,6 +21,11 @@
                                 {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
                             {!! Form::close() !!}
                         @endif
+                        
+                        @if (Auth::id() != $micropost->user_id)                        
+                        @include('user_favorites.favorite_button')
+                        @endif 
+                        
                     </div>
                 </div>
             </li>
