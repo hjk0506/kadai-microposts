@@ -14,17 +14,15 @@
                         {{-- 投稿内容 --}}
                         <p class="mb-0">{!! nl2br(e($micropost->content)) !!}</p>
                     </div>
-                    <div>
+                    <div class="d-flex flex-row ">
                         @if (Auth::id() == $micropost->user_id)
                             {{-- 投稿削除ボタンのフォーム --}}
                             {!! Form::open(['route' => ['microposts.destroy', $micropost->id], 'method' => 'delete']) !!}
-                                {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
+                                {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm mr-2']) !!}
                             {!! Form::close() !!}
                         @endif
                         
-                        @if (Auth::id() != $micropost->user_id)                        
                         @include('user_favorites.favorite_button')
-                        @endif 
                         
                     </div>
                 </div>
