@@ -98,7 +98,7 @@ class UsersController extends Controller
         $microposts = $user->favorites()->paginate(10);
 
         // お気に入り一覧ビューでそれらを表示
-        return view('users.favorites', [
+        return view('users.show', [
             'user' => $user,
             'microposts' => $microposts,
         ]);
